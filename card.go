@@ -140,7 +140,7 @@ func (c *Card) Attachment(attachmentId string) (*Attachment, error) {
 }
 
 func (c *Card) Actions() (actions []Action, err error) {
-	body, err := c.client.Get("/cards/" + c.Id + "/actions")
+	body, err := c.client.Get("/cards/" + c.Id + "/actions?filter=all")
 	if err != nil {
 		return
 	}
